@@ -36,11 +36,11 @@ def button_equal():
     if math == "addition":
         e.insert(0, f_num + int(second_number))  # from the global f_num +second_number
     if math == "subtraction":
-        e.insert(0, f_num + int(second_number))
+        e.insert(0, f_num - int(second_number))
     if math == "multiplication":
-        e.insert(0, f_num + int(second_number))
+        e.insert(0, f_num * int(second_number))
     if math == "division":
-        e.insert(0, f_num + int(second_number))
+        e.insert(0, f_num / int(second_number))
 
 
 # Subtract_function
