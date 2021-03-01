@@ -4,7 +4,7 @@ root = Tk()
 
 # Creating a Label Widget
 myLabel1 = Label(root, text="Hello World!")
-myLabel2 = Label(root, text="My Name Is John Elder")
+myLabel2 = Label(root, text="My Name Is Joey Smith")
 # Shoving it onto the screen
 
 # User can input as many grid please.
