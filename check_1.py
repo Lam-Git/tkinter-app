@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 
 root = Tk()
-root.title("Coding Check Box")
+root.title("Coding ON/OFF Check Box")
 root.geometry("400x400")
 
 # this function will show the amount of time its being click
