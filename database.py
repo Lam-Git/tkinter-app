@@ -5,7 +5,7 @@ import sqlite3
 
 root = Tk()
 root.title("Coding a Database with Tkinter...!")
-root.geometry("400x600")
+root.geometry("400x750")
 
 # Databases ----MUST BE PLACED IN EVERY SECTION
 # Create a database or connect to one
@@ -70,11 +70,11 @@ def update():
 
 # -----------Create Edit function to update a record--------
 def edit():
-    # root.withdraw()
+    root.withdraw()
     global editor
     editor = Tk()
     editor.title("Update A Record")
-    editor.geometry("400x600")
+    editor.geometry("400x300")
     # Create a database or connect to one
     conn = sqlite3.connect("address_book.db")
     # Create cursor
