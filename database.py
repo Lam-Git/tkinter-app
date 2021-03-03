@@ -70,17 +70,18 @@ def update():
 
 # -----------Create Edit function to update a record--------
 def edit():
-    root.withdraw()
+    # root.withdraw()
     global editor
     editor = Tk()
     editor.title("Update A Record")
-    editor.geometry("400x300")
+    editor.geometry("400x600")
     # Create a database or connect to one
     conn = sqlite3.connect("address_book.db")
     # Create cursor
     c = conn.cursor()
 
     record_id = delete_box.get()
+
     # Query the database
     c.execute("SELECT * FROM addresses WHERE oid = " + record_id)
     records = c.fetchall()
@@ -130,7 +131,7 @@ def edit():
         state_editor.insert(0, record[4])
         zipcode_editor.insert(0, record[5])
 
-        # Create a Save Button To Save edited record
+    # Create a Save Button To Save edited record
     edit_btn = Button(editor, text="Save Record", command=update)
     edit_btn.grid(row=6, column=0, columnspan=2, pady=10, padx=10, ipadx=145)
 
