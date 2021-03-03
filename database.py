@@ -5,17 +5,18 @@ import sqlite3
 
 root = Tk()
 root.title("Coding a Database with Tkinter...!")
-root.geometry("400x400")
+root.geometry("400x600")
 
-# Databases
+# Databases ----MUST BE PLACED IN EVERY SECTION
 # Create a database or connect to one
 conn = sqlite3.connect("address_book.db")
 # Create cursor
 c = conn.cursor()
 
-# Create Table
+# Create Table Once... So that it can create a Database(db) table
 '''
-c.execute("""CREATE TABLE addresses(
+c.execute(
+    """CREATE TABLE addresses(
 first_name text, 
 last_name text,
 address text, 
@@ -23,7 +24,9 @@ city text,
 state text,
 zipcode integer
 )"""
-)'''
+)
+
+'''
 
 # -----------------------Create Update function to update a record-----------
 def update():
@@ -154,7 +157,8 @@ def delete():
 
 # ----------------------------------------------------
 # Create Submit Function For database
-# Create Submit Function For database
+
+
 def submit():
     # Create a database or connect to one
     conn = sqlite3.connect("address_book.db")
@@ -163,7 +167,7 @@ def submit():
 
     # Insert Into Table
     c.execute(
-        "INSERT INTO addresses VALUES (:f_name, :l_name, :address, :city, :state, :zipcode)",
+        "INSERT INTO addresses VALUES(:f_name,:l_name, :address, :city, :state, :zipcode)",
         {
             "f_name": f_name.get(),
             "l_name": l_name.get(),
@@ -205,9 +209,9 @@ def query():
     # Loop Thru Results
 
     print_records = ""
-    for record in records:  # user can pull data with index
+    for record in records:  # user can pull data with index str(record[1])
         print_records += (
-            str(record[0]) + " " + str(record[1]) + " " + "\t" + str(record[6]) + "\n"
+            str(record) + " " + str(record[0]) + " " + "\t" + str(record[6]) + "\n"
         )
 
     query_label = Label(root, text=print_records)
